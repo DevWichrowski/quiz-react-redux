@@ -1,0 +1,12 @@
+@import "./styles/colors";
+@import "./styles/mixins";
+
+.app {
+  margin-top: 6%;
+  margin-left: 18%;
+  border-radius: 10px;
+  @include boxShadow();
+  width: 60%;
+  position: relative;
+  min-height: 60vh;
+}
