@@ -6,6 +6,7 @@ import {addPoints, nextQuestion, resetQuiz} from "../../store/actions/quiz.actio
 import ProgressBar from "../ProgressBar/ProgressBar";
 import Button from "../shared/Button/Button";
 
+
 const Quiz = ({questionNumber, submit, resetQuiz, nextQuestion, ...props}) => {
     const [variantChosen, setVariantChosen] = useState(false);
     const [question, setQuestion] = useState(null);
@@ -36,7 +37,6 @@ const Quiz = ({questionNumber, submit, resetQuiz, nextQuestion, ...props}) => {
     return (
         <div className="quiz-container">
             {question != null && <ProgressBar step={question?.id}/>}
-            {console.log(variantChosen)}
             <div className="quiz">
                 <div className="quiz__question">{question?.content}</div>
                 <div className="quiz__answers">
@@ -53,7 +53,7 @@ const Quiz = ({questionNumber, submit, resetQuiz, nextQuestion, ...props}) => {
                             <Button onClick={nextQuestion}
                                     className="question-footer__next"><span>Next question</span></Button>) :
                         variantChosen && questionNumber === quizLength ?
-                            (<Button onClick={nextQuestion} className="question-footer__finish">Finish</Button>) :
+                            (<Button onClick={nextQuestion} className="question-footer__next">Finish</Button>) :
                             null}
                 </div>
             </div>
@@ -71,4 +71,4 @@ const mapDispatchToProps = dispatch => ({
     nextQuestion: () => dispatch(nextQuestion())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Quiz)
+export default connect(mapStateToProps, mapDispatchToProps)(Quiz);
