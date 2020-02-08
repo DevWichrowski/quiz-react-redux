@@ -1,3 +1,5 @@
+@import "styles/colors";
+@import "styles/mixins";
 
 * {
   box-sizing: border-box;
@@ -7,11 +9,24 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-body {
+html, body {
+  height: 100%;
   margin: 0;
+  position: relative;
+  background-color: $light-gray;
 }
 
 #root {
   height: 100%;
   width: 100%;
+}
+
+button {
+  @include buttonBoxShadow();
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  padding: 5px 10px;
+  min-width: 64px;
 }

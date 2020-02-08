@@ -1,0 +1,28 @@
+@import "../../styles/colors";
+@import "../../styles/mixins";
+
+.progress-container {
+  height: 10px;
+  width: 80%;
+  @include boxShadow();
+  border-radius: 10px;
+  margin: 10px auto;
+  background-color: $light-gray;
+
+  .progress-bar {
+    transition: .5s;
+    background-color: $blue;
+    color: $gray;
+    font-size: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    border-radius: 8px;
+    height: 100%;
+
+    .step {
+      margin-right: 10px;
+      font-weight: bold;
+    }
+  }
+}

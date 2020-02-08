@@ -3,6 +3,7 @@ import "./Quiz.scss";
 import {quizQuestions} from "../../core/questions";
 import {connect} from "react-redux";
 import {nextQuestion, resetQuiz, addPoints} from "../../store/actions/quiz.actions";
+import ProgressBar from "../ProgressBar/ProgressBar";
 
 const Quiz = ({questionNumber, submit, resetQuiz, nextQuestion, ...props}) => {
     const [variantChosen, setVariantChosen] = useState(false);
@@ -19,25 +20,29 @@ const Quiz = ({questionNumber, submit, resetQuiz, nextQuestion, ...props}) => {
         }
 
         setVariantChosen(true);
+
         if (question.correctAnswer === e.target.value) {
             submit()
         }
     };
 
     return (
+        <div className="quiz-container">
+            {question != null && <ProgressBar step={question?.id}/> }
         <div className="quiz">
-            <h1>HEADER</h1>
-            <div>{question && question.content}</div>
-
-            <div>{question && question.answers.map((answer, index) => <button
-                key={index} value={answer.variant}
-                onClick={e => selectAnswer(e)}>{answer.label}</button>)}</div>
-            <footer style={{marginTop: '50px'}}>
-                <button onClick={resetQuiz}>Reset</button>
-                {variantChosen && questionNumber !== quizQuestions.length ? (<button onClick={nextQuestion}>Next
-                    question</button>) : variantChosen && questionNumber === quizQuestions.length ? (
-                    <button onClick={nextQuestion}>Finish</button>) : null}
-            </footer>
+            <div className="question">{question && question.content}</div>
+            <div className="answers">
+                {question && question.answers.map((answer, index) => <button
+                    key={index} value={answer.variant}
+                    onClick={e => selectAnswer(e)} className="variant">{answer.label}</button>)}
+            </div>
+            <div className="question-footer">
+                <button onClick={resetQuiz} className="reset">Reset</button>
+                {variantChosen && questionNumber !== quizQuestions.length ? (<button onClick={nextQuestion} className="next"><span>Next
+                    question</span></button>) : variantChosen && questionNumber === quizQuestions.length ? (
+                    <button onClick={nextQuestion} className="finish">Finish</button>) : null}
+            </div>
+        </div>
         </div>
     );
 };
