@@ -2,16 +2,16 @@ import React from 'react';
 import "./Button.scss";
 import PropTypes from "prop-types";
 
-const Button = ({buttonText, className, onClick}) => {
+const Button = ({children, className, onClick}) => {
     return (
         <div className={`${className ?? 'button'}`} onClick={onClick}>
-            <p>{buttonText}</p>
+            <p>{children}</p>
         </div>
     );
 };
 
 Button.propTypes = {
-    buttonText: PropTypes.string.isRequired,
+    children: PropTypes.string.isRequired,
     className: PropTypes.string
 };
 

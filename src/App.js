@@ -6,10 +6,11 @@ import history from "./core/history";
 import WelcomeScreen from "./components/WelcomeScreen/WelcomeScreen";
 import Footer from "./components/shared/Footer/Footer";
 import Header from "./components/shared/Header/Header";
+import "./styles/animations.scss"
 
 const App = () => {
     return (
-        <div>
+        <>
             <Header headerText={'React Quiz'} className="main-header"/>
             <div className="app">
                 <Router history={history}>
@@ -17,9 +18,8 @@ const App = () => {
                     <Route path="/quiz" component={Quiz}/>
                 </Router>
             </div>
-            <Footer />
-        </div>
-
+            <Footer footerText={"test"}/>
+        </>
     );
 };
 

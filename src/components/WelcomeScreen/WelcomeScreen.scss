@@ -1,8 +1,14 @@
 .welcome-screen {
+  display: block;
   height: 100%;
 
-  &__content {
-    margin-top: 30px;
+  ul {
+    //margin-top: 30px;
     padding: 5%;
+    margin: 0 auto;
+
+    li {
+      margin-bottom: 10px;
+    }
   }
 }

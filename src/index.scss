@@ -21,8 +21,11 @@ html, body {
   width: 100%;
 }
 
+strong {
+  font-weight: bold;
+}
+
 button {
-  @include buttonBoxShadow();
   border-radius: 5px;
   outline: none;
   cursor: pointer;
