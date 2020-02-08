@@ -17,7 +17,7 @@ const App = () => {
                     <Route path="/quiz" component={Quiz}/>
                 </Router>
             </div>
-        <Footer/>
+            <Footer />
         </div>
 
     );

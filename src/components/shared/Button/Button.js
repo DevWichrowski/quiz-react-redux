@@ -2,9 +2,9 @@ import React from 'react';
 import "./Button.scss";
 import PropTypes from "prop-types";
 
-const Button = ({buttonText, style, onClick}) => {
+const Button = ({buttonText, className, onClick}) => {
     return (
-        <div className="button" style={style} onClick={onClick}>
+        <div className={`${className ?? 'button'}`} onClick={onClick}>
             <p>{buttonText}</p>
         </div>
     );
@@ -12,7 +12,7 @@ const Button = ({buttonText, style, onClick}) => {
 
 Button.propTypes = {
     buttonText: PropTypes.string.isRequired,
-    style: PropTypes.object
+    className: PropTypes.string
 };
 
 export default Button;

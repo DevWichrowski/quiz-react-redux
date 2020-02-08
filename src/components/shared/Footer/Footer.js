@@ -17,7 +17,7 @@ const Footer = ({footerText, style}) => {
 };
 
 Footer.propTypes = {
-    footerText: PropTypes.string.isRequired,
+    footerText: PropTypes.string,
     style: PropTypes.object
 };
 

@@ -1,6 +1,22 @@
+@import "../../../styles/colors";
+
 .button {
-  border-radius: 10px;
-  border: 1px solid black;
-  width: 200px;
-  cursor: pointer;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  background-color: $dark-gray;
+  color: $white;
+  font-weight: normal;
+  text-align: center;
+  width: 20%;
+  margin: 10% auto;
+  transition: all 0.5s;
+
+  &:hover {
+    transition: all 0.5s;
+    cursor: pointer;
+    background-color: $button-hover;
+  }
 }

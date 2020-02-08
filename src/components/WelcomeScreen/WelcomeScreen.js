@@ -16,11 +16,11 @@ const WelcomeScreen = ({start}) => {
 
     return (
         <div className="welcome-screen">
-            <Header headerText={"Welcome in React Quiz"}/>
+            <Header headerText={"Instructions"}/>
             <div className="welcome-screen__content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, aliquid animi cum deleniti
-                    doloremque ea eveniet illum ipsum iure maiores minus modi molestiae necessitatibus optio placeat
-                    quaerat quis quos sapiente?</p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. At doloremque expedita, nisi placeat provident
+                quod ratione sed voluptate. Alias earum enim harum laudantium modi molestiae nihil officiis quae ut
+                vitae.
             </div>
 
             <Button buttonText={"Start Quiz"} onClick={startQuiz}/>
