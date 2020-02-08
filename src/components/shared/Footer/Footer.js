@@ -8,9 +8,9 @@ const Footer = ({footerText, style}) => {
             <div>Created by DevWichrowski</div>
             <ul>
                 <li>
-                    <a href="#"><i className="fab fa-linkedin-in icon"></i></a></li>
+                    <a href="#"><i className="fab fa-linkedin-in icon"/></a></li>
                 <li>
-                    <a href="#"><i className="fab fa-google-plus-g icon"></i></a></li>
+                    <a href="#"><i className="fab fa-google-plus-g icon"/></a></li>
             </ul>
         </div>
     );
