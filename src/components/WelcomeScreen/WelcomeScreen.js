@@ -26,7 +26,9 @@ const WelcomeScreen = ({start}) => {
                 <li>Once you choose your answer you can't change it, so take your time.</li>
             </ul>
 
-            <Button onClick={startQuiz}>Start Quiz</Button>
+            <div className="button-container">
+                <Button onClick={startQuiz}>Start Quiz</Button>
+            </div>
         </div>
     );
 };

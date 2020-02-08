@@ -3,12 +3,17 @@
   height: 100%;
 
   ul {
-    //margin-top: 30px;
     padding: 5%;
     margin: 0 auto;
 
     li {
       margin-bottom: 10px;
     }
+  }
+
+  .button-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }

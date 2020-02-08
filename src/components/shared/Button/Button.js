@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 const Button = ({children, className, onClick}) => {
     return (
-        <div className={`${className ?? 'button'}`} onClick={onClick}>
+        <div className={`button ${className ?? ''}`} onClick={onClick}>
             <p>{children}</p>
         </div>
     );

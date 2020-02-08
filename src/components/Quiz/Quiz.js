@@ -4,10 +4,12 @@ import {quizQuestions} from "../../core/questions";
 import {connect} from "react-redux";
 import {addPoints, nextQuestion, resetQuiz} from "../../store/actions/quiz.actions";
 import ProgressBar from "../ProgressBar/ProgressBar";
+import Button from "../shared/Button/Button";
 
 const Quiz = ({questionNumber, submit, resetQuiz, nextQuestion, ...props}) => {
     const [variantChosen, setVariantChosen] = useState(false);
     const [question, setQuestion] = useState(null);
+    const quizLength = quizQuestions.length;
 
     useEffect(() => {
         setQuestion(quizQuestions.find(question => question.id === questionNumber));
@@ -19,30 +21,42 @@ const Quiz = ({questionNumber, submit, resetQuiz, nextQuestion, ...props}) => {
             return;
         }
 
-        setVariantChosen(true);
+        setVariantChosen(e.variant);
 
-        if (question.correctAnswer === e.target.value) {
+        if (question.correctAnswer === e.variant) {
             submit()
         }
     };
 
+    const reset = () => {
+        resetQuiz();
+        setVariantChosen(false);
+    };
+
     return (
         <div className="quiz-container">
-            {question != null && <ProgressBar step={question?.id}/> }
-        <div className="quiz">
-            <div className="question">{question?.content}</div>
-            <div className="answers">
-                {question && question.answers.map((answer, index) => <button
-                    key={index} value={answer.variant}
-                    onClick={e => selectAnswer(e)} className="variant">{answer.label}</button>)}
+            {question != null && <ProgressBar step={question?.id}/>}
+            {console.log(variantChosen)}
+            <div className="quiz">
+                <div className="quiz__question">{question?.content}</div>
+                <div className="quiz__answers">
+                    {question?.answers.map((answer, index) => <Button
+                        key={index} value={answer.variant}
+                        onClick={e => selectAnswer(answer)} className={`variant ${variantChosen ?
+                        question.correctAnswer === answer.variant ?
+                            'correct' : 'error' : null}`}>{answer.label}</Button>)}
+                </div>
+                <div className="question-footer">
+                    <Button onClick={reset}>Reset</Button>
+                    {variantChosen && questionNumber !== quizLength ?
+                        (
+                            <Button onClick={nextQuestion}
+                                    className="question-footer__next"><span>Next question</span></Button>) :
+                        variantChosen && questionNumber === quizLength ?
+                            (<Button onClick={nextQuestion} className="question-footer__finish">Finish</Button>) :
+                            null}
+                </div>
             </div>
-            <div className="question-footer">
-                <button onClick={resetQuiz} className="reset">Reset</button>
-                {variantChosen && questionNumber !== quizQuestions.length ? (<button onClick={nextQuestion} className="next"><span>Next
-                    question</span></button>) : variantChosen && questionNumber === quizQuestions.length ? (
-                    <button onClick={nextQuestion} className="finish">Finish</button>) : null}
-            </div>
-        </div>
         </div>
     );
 };
