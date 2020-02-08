@@ -2,9 +2,9 @@ import React from 'react';
 import "./Header.scss";
 import PropTypes from "prop-types";
 
-const Header = ({headerText, style}) => {
+const Header = ({headerText, className}) => {
     return (
-        <div className="header" style={style}>
+        <div className={`${className ?? 'header'}`}>
             <h2>{headerText}</h2>
         </div>
     );
@@ -12,7 +12,7 @@ const Header = ({headerText, style}) => {
 
 Header.propTypes = {
     headerText: PropTypes.string.isRequired,
-    style: PropTypes.object
+    className: PropTypes.string
 };
 
 export default Header;

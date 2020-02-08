@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import "./Quiz.scss";
 import {quizQuestions} from "../../core/questions";
 import {connect} from "react-redux";
-import {nextQuestion, resetQuiz, addPoints} from "../../store/actions/quiz.actions";
+import {addPoints, nextQuestion, resetQuiz} from "../../store/actions/quiz.actions";
 import ProgressBar from "../ProgressBar/ProgressBar";
 
 const Quiz = ({questionNumber, submit, resetQuiz, nextQuestion, ...props}) => {
@@ -30,7 +30,7 @@ const Quiz = ({questionNumber, submit, resetQuiz, nextQuestion, ...props}) => {
         <div className="quiz-container">
             {question != null && <ProgressBar step={question?.id}/> }
         <div className="quiz">
-            <div className="question">{question && question.content}</div>
+            <div className="question">{question?.content}</div>
             <div className="answers">
                 {question && question.answers.map((answer, index) => <button
                     key={index} value={answer.variant}
