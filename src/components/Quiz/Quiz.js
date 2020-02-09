@@ -5,9 +5,11 @@ import {connect} from "react-redux";
 import {addPoints, nextQuestion, resetQuiz} from "../../store/actions/quiz.actions";
 import ProgressBar from "../ProgressBar/ProgressBar";
 import Button from "../shared/Button/Button";
+import {useHistory} from 'react-router-dom';
 
 
 const Quiz = ({questionNumber, submit, resetQuiz, nextQuestion, ...props}) => {
+    const history = useHistory();
     const [variantChosen, setVariantChosen] = useState(false);
     const [question, setQuestion] = useState(null);
     const quizLength = quizQuestions.length;
@@ -34,6 +36,10 @@ const Quiz = ({questionNumber, submit, resetQuiz, nextQuestion, ...props}) => {
         setVariantChosen(false);
     };
 
+    const navigateToSummary = () => {
+        history.push("/summary");
+    };
+
     return (
         <div className="quiz-container">
             {question != null && <ProgressBar step={question?.id}/>}
@@ -53,7 +59,8 @@ const Quiz = ({questionNumber, submit, resetQuiz, nextQuestion, ...props}) => {
                             <Button onClick={nextQuestion}
                                     className="question-footer__next"><span>Next question</span></Button>) :
                         variantChosen && questionNumber === quizLength ?
-                            (<Button onClick={nextQuestion} className="question-footer__next">Finish</Button>) :
+                            (<Button className="question-footer__next"
+                                     onClick={navigateToSummary}>Finish</Button>) :
                             null}
                 </div>
             </div>

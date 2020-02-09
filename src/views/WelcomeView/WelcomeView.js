@@ -1,5 +1,5 @@
 import React from 'react';
-import {useDocumentTitle} from "../../core/hooks";
+import {useDocumentTitle} from "../../core/helpers/hooks";
 import Layout from "../../components/shared/Layout/Layout";
 import WelcomeScreen from "../../components/WelcomeScreen/WelcomeScreen";
 
