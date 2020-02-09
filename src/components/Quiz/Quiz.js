@@ -7,13 +7,13 @@ import ProgressBar from "../ProgressBar/ProgressBar";
 import Button from "../shared/Button/Button";
 import {useHistory} from 'react-router-dom';
 import Footer from "../shared/Footer/Footer";
+import {questionsCount} from "../../core/helpers/questionsCount";
 
 
 const Quiz = ({questionNumber, submit, resetQuiz, nextQuestion}) => {
     const history = useHistory();
     const [variantChosen, setVariantChosen] = useState(false);
     const [question, setQuestion] = useState(null);
-    const quizLength = quizQuestions.length;
 
     useEffect(() => {
         setQuestion(quizQuestions.find(question => question.id === questionNumber));
@@ -42,12 +42,12 @@ const Quiz = ({questionNumber, submit, resetQuiz, nextQuestion}) => {
     };
 
     const conditionalNextButton = () => {
-        if (variantChosen && questionNumber !== quizLength) {
+        if (variantChosen && questionNumber !== questionsCount) {
             return <Button onClick={nextQuestion}
                            className="question-footer__next"><span>Next question</span></Button>
         }
 
-        if (variantChosen && questionNumber === quizLength) {
+        if (variantChosen && questionNumber === questionsCount) {
             return <Button className="question-footer__next"
                            onClick={navigateToSummary}>Finish</Button>
         }
