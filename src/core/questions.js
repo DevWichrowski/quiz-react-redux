@@ -14,9 +14,9 @@ export const quizQuestions = [
         id: 2,
         content: "Which of the following is NOT a React Component lifecycle method?",
         answers: [
-            {variant: 'a', label: 'ComponentDidMount'},
+            {variant: 'a', label: 'componentDidMount'},
             {variant: 'b', label: 'componentDidUpdate'},
-            {variant: 'c', label: 'ComponentWillRender'},
+            {variant: 'c', label: 'componentWillRender'},
         ],
         correctAnswer: "c"
     },

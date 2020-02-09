@@ -14,7 +14,7 @@ export const quizReducer = (state = initialState, action) => {
             return {...state, score: state.score + 5}
         }
         case QuizActions.RESET_QUIZ: {
-            return {...state, score: 0, questionNumber: 0}
+            return {...state, score: 0, questionNumber: 1}
         }
         case QuizActions.NEXT_QUESTION: {
             return {...state, questionNumber: state.questionNumber + 1}

@@ -29,7 +29,7 @@ describe('Quiz reducer', () => {
 
         const newState = quizReducer({score: 10, questionNumber: 2}, action);
 
-        expect(newState).toEqual({score: 0, questionNumber: 0});
+        expect(newState).toEqual({score: 0, questionNumber: 1});
     });
 
     it('should increment questionNumber - nextQuestion', () => {
