@@ -1,6 +1,6 @@
 import React from 'react';
 import "./App.scss"
-import {BrowserRouter, Route, Router} from "react-router-dom";
+import {BrowserRouter, Route} from "react-router-dom";
 import WelcomeView from "./views/WelcomeView/WelcomeView";
 import QuizView from "./views/QuizView/QuizView";
 import SummaryView from "./views/SummaryView/SummaryView";

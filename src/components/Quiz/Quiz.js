@@ -16,6 +16,12 @@ const Quiz = ({questionNumber, submit, resetQuiz, nextQuestion}) => {
     const [question, setQuestion] = useState(null);
 
     useEffect(() => {
+        if (questionNumber === 0) {
+            history.push("/")
+        }
+    }, [questionNumber, history]);
+
+    useEffect(() => {
         setQuestion(quizQuestions.find(question => question.id === questionNumber));
         setVariantChosen(false);
     }, [questionNumber]);
