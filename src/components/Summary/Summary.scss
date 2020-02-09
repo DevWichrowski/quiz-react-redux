@@ -33,6 +33,12 @@
         margin-left: 10px;
         background-color: $gray;
         color: $blue;
+
+        &:hover {
+          transition: all 0.5s;
+          cursor: pointer;
+          background-color: $button-hover;
+        }
       }
 
     }
