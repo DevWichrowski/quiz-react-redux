@@ -5,14 +5,14 @@
 
   &__content {
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 10px;
     @include boxShadow();
     width: 60%;
     background-color: white;
-    height: 60vh;
+    height: 55vh;
   }
 
   @media screen and (max-width: 1000px) {
