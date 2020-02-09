@@ -9,11 +9,14 @@ import {useHistory} from 'react-router-dom';
 import Footer from "../shared/Footer/Footer";
 
 
-const Quiz = ({questionNumber, submit, resetQuiz, nextQuestion, ...props}) => {
+const Quiz = ({questionNumber, submit, resetQuiz, nextQuestion}) => {
     const history = useHistory();
     const [variantChosen, setVariantChosen] = useState(false);
     const [question, setQuestion] = useState(null);
     const quizLength = quizQuestions.length;
+
+    const nextButton = <Button onClick={nextQuestion}
+                               className="question-footer__next"><span>Next question</span></Button>
 
     useEffect(() => {
         setQuestion(quizQuestions.find(question => question.id === questionNumber));
@@ -41,6 +44,20 @@ const Quiz = ({questionNumber, submit, resetQuiz, nextQuestion, ...props}) => {
         history.push("/summary");
     };
 
+    const conditionalNextButton = () => {
+        if (variantChosen && questionNumber !== quizLength) {
+            return <Button onClick={nextQuestion}
+                           className="question-footer__next"><span>Next question</span></Button>
+        }
+
+        if (variantChosen && questionNumber === quizLength) {
+            return <Button className="question-footer__next"
+                           onClick={navigateToSummary}>Finish</Button>
+        }
+
+        return null;
+    };
+
     return (
         <div className="quiz-container">
             {question != null && <ProgressBar step={question?.id}/>}
@@ -55,14 +72,7 @@ const Quiz = ({questionNumber, submit, resetQuiz, nextQuestion, ...props}) => {
                 </div>
                 <Footer className="question-footer">
                     <Button onClick={reset}>Reset</Button>
-                    {variantChosen && questionNumber !== quizLength ?
-                        (
-                            <Button onClick={nextQuestion}
-                                    className="question-footer__next"><span>Next question</span></Button>) :
-                        variantChosen && questionNumber === quizLength ?
-                            (<Button className="question-footer__next"
-                                     onClick={navigateToSummary}>Finish</Button>) :
-                            null}
+                    {conditionalNextButton()}
                 </Footer>
             </div>
         </div>

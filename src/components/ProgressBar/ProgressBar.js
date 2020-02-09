@@ -1,6 +1,8 @@
 import React from "react";
 import "./ProgressBar.scss";
 import {quizQuestions} from "../../core/questions";
+import PropTypes from "prop-types";
+
 
 const ProgressBar = ({step}) => {
     const questionsAmount = quizQuestions.length;
@@ -16,4 +18,9 @@ const ProgressBar = ({step}) => {
     )
 };
 
+ProgressBar.propTypes = {
+    step: PropTypes.number
+};
+
 export default ProgressBar;
+
