@@ -6,7 +6,7 @@ exports[`Quiz should render 1`] = `
 >
   <Quiz
     nextQuestion={[Function]}
-    questionNumber={1}
+    questionNumber={0}
     resetQuiz={[Function]}
     store={
       Object {

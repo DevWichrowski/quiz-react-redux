@@ -1,8 +1,8 @@
 import * as QuizActions from "../actions/quiz.actions";
 
-const initialState = {
+export const initialState = {
     score: 0,
-    questionNumber: 1,
+    questionNumber: 0,
 };
 
 export const quizReducer = (state = initialState, action) => {
@@ -14,7 +14,7 @@ export const quizReducer = (state = initialState, action) => {
             return {...state, score: state.score + 5}
         }
         case QuizActions.RESET_QUIZ: {
-            return {...state, score: 0, questionNumber: 1}
+            return {...state, score: 0, questionNumber: 0}
         }
         case QuizActions.NEXT_QUESTION: {
             return {...state, questionNumber: state.questionNumber + 1}

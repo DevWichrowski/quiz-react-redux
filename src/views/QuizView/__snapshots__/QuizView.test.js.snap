@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`QuizView should render 1`] = `
+<Layout>
+  <Connect(Quiz) />
+</Layout>
+`;
