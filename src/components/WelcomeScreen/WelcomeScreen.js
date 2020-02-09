@@ -5,7 +5,7 @@ import Button from "../shared/Button/Button";
 import {useHistory} from 'react-router-dom';
 import {connect} from "react-redux";
 import {startQuiz} from "../../store/actions/quiz.actions";
-import {quizQuestions} from "../../core/questions";
+import {questionsCount} from "../../core/helpers/questionsCount";
 
 
 const WelcomeScreen = ({start}) => {
@@ -21,7 +21,7 @@ const WelcomeScreen = ({start}) => {
             <Header headerText={"Instructions"}/>
             <div className="welcome-content">
                 <ul>
-                    <li>In this quiz you will have to answer to <strong>{quizQuestions.length} questions.</strong></li>
+                    <li>In this quiz you will have to answer to <strong>{questionsCount} questions.</strong></li>
                     <li>There is no time limit.</li>
                     <li>For a correct answer you will get <strong>5 points</strong>, for wrong answer <strong>0
                         points.</strong></li>
