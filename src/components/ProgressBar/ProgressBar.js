@@ -1,17 +1,16 @@
 import React from "react";
 import "./ProgressBar.scss";
-import {quizQuestions} from "../../core/questions";
 import PropTypes from "prop-types";
+import {questionsCount} from "../../core/helpers/questionsCount";
 
 
 const ProgressBar = ({step}) => {
-    const questionsAmount = quizQuestions.length;
 
     return (
         <div className="progress-container">
-            <div className="progress-bar" style={{width: step * questionsAmount + '%'}}>
+            <div className="progress-bar" style={{width: step * questionsCount + '%'}}>
                 <div className="progress-bar__step">
-                    {step}/{questionsAmount}
+                    {step}/{questionsCount}
                 </div>
             </div>
         </div>
