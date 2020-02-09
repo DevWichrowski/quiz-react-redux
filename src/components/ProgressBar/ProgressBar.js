@@ -11,7 +11,6 @@ const ProgressBar = ({step}) => {
                 <div className="progress-bar__step">
                     {step}/{questionsAmount}
                 </div>
-
             </div>
         </div>
     )

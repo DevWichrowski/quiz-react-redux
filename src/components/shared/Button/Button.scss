@@ -5,13 +5,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 35px;
+  min-height: 35px;
   background-color: $dark-gray;
   color: $white;
   font-weight: normal;
   text-align: center;
   width: 150px;
   transition: all 0.5s;
+
+  p {
+    margin: 0;
+  }
 
   &:hover {
     transition: all 0.5s;

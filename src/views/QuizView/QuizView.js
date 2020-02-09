@@ -4,11 +4,9 @@ import Quiz from "../../components/Quiz/Quiz";
 
 const QuizView = () => {
     return (
-        <div>
             <Layout>
                 <Quiz/>
             </Layout>
-        </div>
     );
 };
 

@@ -1,29 +1,11 @@
-@mixin for-xxs {
-  @media screen and (max-width: 400px) {
-    @content;
-  }
-}
-
-@mixin for-xs {
-  @media screen and (max-width: 600px) {
-    @content;
-  }
-}
-
 @mixin for-sm {
-  @media screen and (max-width: 960px) {
+  @media screen and (max-width: 600px) {
     @content;
   }
 }
 
 @mixin for-md {
   @media screen and (max-width: 1280px) {
-    @content;
-  }
-}
-
-@mixin for-lg {
-  @media screen and (max-width: 1920px) {
     @content;
   }
 }

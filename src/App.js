@@ -1,4 +1,5 @@
 import React from 'react';
+import "./App.scss"
 import {Route, Router} from "react-router-dom";
 import history from "./core/history";
 import "./styles/animations.scss"

@@ -1,12 +1,13 @@
 @import "../../styles/colors";
 @import "../../styles/mixins";
+@import "../../styles/media-queries";
 
 .progress-container {
   height: 10px;
   width: 80%;
   @include boxShadow();
   border-radius: 10px;
-  margin: 10px auto;
+  margin: 30px auto;
   background-color: $light-gray;
 
   .progress-bar {

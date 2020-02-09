@@ -19,13 +19,15 @@ const Summary = ({score, resetQuiz}) => {
         <div className="summary">
             <Header headerText={"Summary"}/>
             <div className="summary__content">
-                <h3>Thank you for participating in the quiz</h3>
-                <h2>Your score: {score}/{maxPoints}</h2>
+                <div>
+                    <h3>Thank you for participating in the quiz</h3>
+                    <h2>Your score: {score}/{maxPoints}</h2>
+                </div>
                 <div className="buttons-container">
                     <Link to={"/"}>
                         <Button>Home</Button>
                     </Link>
-                    <Button onClick={retakeQuiz}>Re-take quiz</Button>
+                    <Button onClick={retakeQuiz} className="reset">Re-take quiz</Button>
                 </div>
             </div>
         </div>
