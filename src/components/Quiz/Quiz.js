@@ -15,9 +15,6 @@ const Quiz = ({questionNumber, submit, resetQuiz, nextQuestion}) => {
     const [question, setQuestion] = useState(null);
     const quizLength = quizQuestions.length;
 
-    const nextButton = <Button onClick={nextQuestion}
-                               className="question-footer__next"><span>Next question</span></Button>
-
     useEffect(() => {
         setQuestion(quizQuestions.find(question => question.id === questionNumber));
         setVariantChosen(false);
