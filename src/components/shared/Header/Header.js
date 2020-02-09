@@ -3,19 +3,19 @@ import "./Header.scss";
 import PropTypes from "prop-types";
 import {Link} from "react-router-dom";
 
-const Header = ({headerText, navigation, className}) => {
+const Header = ({headerText, homeNavigation, className}) => {
     return (
         <div className={`${className ?? 'header'}`}>
-            <Link to={"/"}>
+            {homeNavigation ? <Link to={"/"}>
                 <h2>{headerText ?? "React Quiz"}</h2>
-            </Link>
+            </Link> : <h2>{headerText ?? "React Quiz"}</h2>}
         </div>
     );
 };
 
 Header.propTypes = {
     headerText: PropTypes.string,
-    navigation: PropTypes.string,
+    homeNavigation: PropTypes.bool,
     className: PropTypes.string,
 };
 
