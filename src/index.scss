@@ -25,6 +25,23 @@ strong {
   font-weight: bold;
 }
 
+a {
+  color: $blue;
+  text-decoration: none;
+  transition: all 0.5s;
+
+  &:visited {
+    color: $blue;
+    text-decoration: none;
+  }
+
+  &:hover {
+    transition: all 0.5s;
+    color: $white;
+  }
+}
+
+
 button {
   border-radius: 5px;
   outline: none;

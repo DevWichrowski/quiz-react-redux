@@ -1,18 +1,22 @@
 import React from 'react';
 import "./Header.scss";
 import PropTypes from "prop-types";
+import {Link} from "react-router-dom";
 
-const Header = ({headerText, className}) => {
+const Header = ({headerText, navigation, className}) => {
     return (
         <div className={`${className ?? 'header'}`}>
-            <h2>{headerText}</h2>
+            <Link to={"/"}>
+                <h2>{headerText ?? "React Quiz"}</h2>
+            </Link>
         </div>
     );
 };
 
 Header.propTypes = {
-    headerText: PropTypes.string.isRequired,
-    className: PropTypes.string
+    headerText: PropTypes.string,
+    navigation: PropTypes.string,
+    className: PropTypes.string,
 };
 
 export default Header;
