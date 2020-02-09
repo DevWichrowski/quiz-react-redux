@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Quiz should render 1`] = `
+<ContextProvider
+  value={null}
+>
+  <Quiz
+    nextQuestion={[Function]}
+    questionNumber={1}
+    resetQuiz={[Function]}
+    store={
+      Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+        Symbol(observable): [Function],
+      }
+    }
+    submit={[Function]}
+  />
+</ContextProvider>
+`;

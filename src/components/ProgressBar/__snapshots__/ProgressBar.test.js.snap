@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProgressBar component should render 1`] = `
+<div
+  className="progress-container"
+>
+  <div
+    className="progress-bar"
+    style={
+      Object {
+        "width": "NaN%",
+      }
+    }
+  >
+    <div
+      className="progress-bar__step"
+    >
+      /
+      10
+    </div>
+  </div>
+</div>
+`;
