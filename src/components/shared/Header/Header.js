@@ -3,6 +3,7 @@ import "./Header.scss";
 import PropTypes from "prop-types";
 import {Link} from "react-router-dom";
 
+
 const Header = ({headerText, homeNavigation, className}) => {
     return (
         <div className={`${className ?? 'header'}`}>

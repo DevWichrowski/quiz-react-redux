@@ -1,8 +1,9 @@
 import React from 'react';
 import "./Layout.scss"
-import "../../../styles/animations.scss";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
+import PropTypes from "prop-types";
+
 
 const Layout = ({children}) => {
     return (
@@ -14,6 +15,10 @@ const Layout = ({children}) => {
             <Footer/>
         </div>
     );
+};
+
+Layout.propTypes = {
+    children: PropTypes.any.isRequired
 };
 
 export default Layout;

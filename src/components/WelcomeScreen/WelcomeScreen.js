@@ -7,6 +7,7 @@ import {connect} from "react-redux";
 import {startQuiz} from "../../store/actions/quiz.actions";
 import {quizQuestions} from "../../core/questions";
 
+
 const WelcomeScreen = ({start}) => {
     const history = useHistory();
 
@@ -39,4 +40,4 @@ const mapDispatchToProps = dispatch => ({
     start: () => dispatch(startQuiz())
 });
 
-export default connect(null, mapDispatchToProps)(WelcomeScreen)
+export default connect(null, mapDispatchToProps)(WelcomeScreen);

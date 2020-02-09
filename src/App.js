@@ -2,7 +2,6 @@ import React from 'react';
 import "./App.scss"
 import {Route, Router} from "react-router-dom";
 import history from "./core/history";
-import "./styles/animations.scss"
 import WelcomeView from "./views/WelcomeView/WelcomeView";
 import QuizView from "./views/QuizView/QuizView";
 import SummaryView from "./views/SummaryView/SummaryView";

@@ -2,6 +2,7 @@ import React from 'react';
 import "./Footer.scss";
 import PropTypes from "prop-types";
 
+
 const Footer = ({children, className}) => {
     return (
         <div className={`footer ${className ?? ''}`}>

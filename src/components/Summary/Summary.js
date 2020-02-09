@@ -7,6 +7,7 @@ import {maxPoints} from "../../core/helpers/questionsCount";
 import Button from "../shared/Button/Button";
 import {Link, useHistory} from "react-router-dom";
 
+
 const Summary = ({score, resetQuiz}) => {
     const history = useHistory();
 
@@ -27,7 +28,7 @@ const Summary = ({score, resetQuiz}) => {
                     <Link to={"/"}>
                         <Button>Home</Button>
                     </Link>
-                    <Button onClick={retakeQuiz} className="reset">Re-take quiz</Button>
+                    <Button onClick={retakeQuiz} className="buttons-container__reset">Re-take quiz</Button>
                 </div>
             </div>
         </div>
