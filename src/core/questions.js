@@ -12,33 +12,36 @@ export const quizQuestions = [
     },
     {
         id: 2,
-        content: "How can you change a name property inside a React.Component Class component?",
+        content: "Which of the following is NOT a React Component lifecycle method?",
         answers: [
-            {variant: 'a', label: 'props[name] = new name'},
-            {variant: 'b', label: 'this.props.name = new name'},
-            {variant: 'c', label: 'You cannot do that because the properties of a component are read-only'},
+            {variant: 'a', label: 'ComponentDidMount'},
+            {variant: 'b', label: 'componentDidUpdate'},
+            {variant: 'c', label: 'ComponentWillRender'},
         ],
-        correctAnswer: "a"
+        correctAnswer: "c"
     },
     {
         id: 3,
-        content: "How can you access the state of a component from inside of a member function?",
+        content: "What does it mean that reducers in Redux are 'pure' functions?",
         answers: [
-            {variant: 'a', label: 'this.getState()'},
-            {variant: 'b', label: 'this.prototype.stateValue'},
-            {variant: 'c', label: 'this.state'},
-            {variant: 'd', label: 'this.values'},
+            {variant: 'a', label: 'It means that they only take one argument and return one argument'},
+            {
+                variant: 'b',
+                label: 'It means that they always return the same value given the same arguments, and never produce side effects'
+            },
+            {variant: 'c', label: 'It means that their prototype is null'},
+            {variant: 'd', label: 'What\'s a pure function?'},
         ],
-        correctAnswer: "a"
+        correctAnswer: "b"
     },
     {
         id: 4,
-        content: "What kind of error types are not caught by Error Boundaries?",
+        content: "What is a stateless functional component in React?",
         answers: [
-            {variant: 'a', label: 'Lifecycle methods'},
-            {variant: 'b', label: 'Rendering errors'},
-            {variant: 'c', label: 'Event handlers'},
-            {variant: 'd', label: 'Constructor errors'},
+            {variant: 'a', label: 'A component written as a function that simply takes props and returns UI'},
+            {variant: 'b', label: 'A component in which this.state is equal to undefined'},
+            {variant: 'c', label: 'A component that is not connected to any other components'},
+            {variant: 'd', label: 'All React components are stateless functional components!'},
         ],
         correctAnswer: "a"
     },
@@ -55,14 +58,14 @@ export const quizQuestions = [
     },
     {
         id: 6,
-        content: "With what property can you access children from a component?",
+        content: "When using Redux for a single-page React app, how do you connect your Redux store to your react component?",
         answers: [
             {variant: 'a', label: 'this.props.childs'},
             {variant: 'b', label: 'this.children'},
             {variant: 'c', label: 'this.props.children'},
             {variant: 'd', label: 'None of these answers'},
         ],
-        correctAnswer: "a"
+        correctAnswer: "d"
     },
     {
         id: 7,
@@ -73,7 +76,7 @@ export const quizQuestions = [
             {variant: 'c', label: 'componentDidMount'},
             {variant: 'd', label: 'getDerivedStateFromProps'},
         ],
-        correctAnswer: "a"
+        correctAnswer: "c"
     },
     {
         id: 8,
@@ -84,7 +87,7 @@ export const quizQuestions = [
             {variant: 'c', label: 'Jest'},
             {variant: 'd', label: 'Yarn'},
         ],
-        correctAnswer: "a"
+        correctAnswer: "c"
     },
     {
         id: 9,
@@ -95,7 +98,7 @@ export const quizQuestions = [
             {variant: 'c', label: 'Mounting -> Unmounting'},
             {variant: 'd', label: 'Mounting -> Updating -> Unmounting'},
         ],
-        correctAnswer: "a"
+        correctAnswer: "d"
     },
     {
         id: 10,
@@ -106,6 +109,6 @@ export const quizQuestions = [
             {variant: 'c', label: 'To automate component rendering tests'},
             {variant: 'd', label: 'To test the validity of the state of React components'},
         ],
-        correctAnswer: "a"
+        correctAnswer: "c"
     }
 ];
