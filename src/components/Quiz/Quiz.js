@@ -6,6 +6,7 @@ import {addPoints, nextQuestion, resetQuiz} from "../../store/actions/quiz.actio
 import ProgressBar from "../ProgressBar/ProgressBar";
 import Button from "../shared/Button/Button";
 import {useHistory} from 'react-router-dom';
+import Footer from "../shared/Footer/Footer";
 
 
 const Quiz = ({questionNumber, submit, resetQuiz, nextQuestion, ...props}) => {
@@ -52,7 +53,7 @@ const Quiz = ({questionNumber, submit, resetQuiz, nextQuestion, ...props}) => {
                         question.correctAnswer === answer.variant ?
                             'correct' : 'error' : null}`}>{answer.label}</Button>)}
                 </div>
-                <div className="question-footer">
+                <Footer className="question-footer">
                     <Button onClick={reset}>Reset</Button>
                     {variantChosen && questionNumber !== quizLength ?
                         (
@@ -62,7 +63,7 @@ const Quiz = ({questionNumber, submit, resetQuiz, nextQuestion, ...props}) => {
                             (<Button className="question-footer__next"
                                      onClick={navigateToSummary}>Finish</Button>) :
                             null}
-                </div>
+                </Footer>
             </div>
         </div>
     );

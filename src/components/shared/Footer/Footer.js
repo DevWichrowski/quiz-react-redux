@@ -2,22 +2,21 @@ import React from 'react';
 import "./Footer.scss";
 import PropTypes from "prop-types";
 
-const Footer = ({footerText, style}) => {
+const Footer = ({children, className}) => {
     return (
-        <div className="footer" style={style}>
-            <ul>
-                <li>
-                    <a href="#"><i className="fab fa-linkedin-in icon"/></a></li>
-                <li>
-                    <a href="#"><i className="fab fa-google-plus-g icon"/></a></li>
-            </ul>
+        <div className={`footer ${className ?? ''}`}>
+            {children ?? null}
         </div>
     );
 };
 
 Footer.propTypes = {
-    footerText: PropTypes.string,
-    style: PropTypes.object
+    children: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.array,
+        PropTypes.object
+    ]),
+    className: PropTypes.string
 };
 
 export default Footer;
